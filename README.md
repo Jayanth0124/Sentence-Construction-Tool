@@ -41,8 +41,8 @@ The tool embraces simplicity and clarity, focusing on user experience without di
 
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/Jayanth0124/Sentence-Construction-Tool.git>
-   cd <Sentence-Construction-Tool>
+   git clone https://github.com/Jayanth0124/Sentence-Construction-Tool.git
+   cd Sentence-Construction-Tool
    ```
 
 2. Install dependencies:
