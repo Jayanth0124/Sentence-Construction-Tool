@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 0;
+    }
+    
+    .shadow-neumorphism {
+    box-shadow: 8px 8px 15px #0a0a0a,
+    -8px -8px 15px #1e1e1e;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    }
+    
+    .shadow-inner-neumorphism {
+    box-shadow: inset 8px 8px 15px #0a0a0a,
+    inset -8px -8px 15px #1e1e1e;
+    }
+    
+    .shadow-neumorphism-hover {
+    box-shadow: 4px 4px 10px #0a0a0a,
+    -4px -4px 10px #1e1e1e;
+    }
+    
+    button {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    
+    button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    }
+    
+    .timer-normal {
+    color: #e0e0e0;
+    }
+    
+    .timer-warning {
+    color: #ff4d4d;
+    font-weight: bold;
+    }
+    
+/* From Uiverse.io by bandirevanth */
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  .btn-1 {
+    background: rgb(96,9,240);
+    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+    border: none;
+  }
+  
+  .btn-1:before {
+    height: 0%;
+    width: 2px;
+  }
+  
+  .btn-1:hover {
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                 -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+                 inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                 inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+  
+  /* Disabled button effect */
+  .disabled-btn {
+    background: #888 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  
