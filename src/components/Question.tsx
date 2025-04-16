@@ -58,7 +58,7 @@ const Question: React.FC<QuestionProps> = ({
 
   useEffect(() => {
     if (timeLeft === 10) {
-      const audio = new Audio('/src/components/timer.mp3'); // Adjust the path if necessary
+      const audio = new Audio('public/timer.mp3'); // Adjust the path if necessary
       audio.play().catch((error) => {
         console.error('Audio playback failed:', error);
       });
