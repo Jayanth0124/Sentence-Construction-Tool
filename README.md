@@ -18,7 +18,7 @@ Welcome to the **Sentence Construction Tool**, a dynamic and interactive web app
 ## 🌐 Live Demo
 
 Check out the live demo of the Sentence Construction Tool here:  
-[Live Demo](http://localhost:3000)
+[Live Demo](https://constructly.netlify.app/)
 
 ---
 
