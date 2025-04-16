@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postinstall": "chmod +x ./node_modules/.bin/tsc",
     "preview": "vite preview"
+    
   },
   "dependencies": {
     "react": "^18.2.0",
