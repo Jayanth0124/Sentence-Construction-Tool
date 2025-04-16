@@ -23,8 +23,10 @@ const Question: React.FC<QuestionProps> = ({
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>(initialAnswers);
   const [availableOptions, setAvailableOptions] = useState<string[]>(options);
   const [timeLeft, setTimeLeft] = useState(timerDuration);
+  const [audioEnabled, setAudioEnabled] = useState(false);
 
   const onAnswerUpdateRef = useRef(onAnswerUpdate);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     onAnswerUpdateRef.current = onAnswerUpdate;
@@ -57,13 +59,27 @@ const Question: React.FC<QuestionProps> = ({
   }, [timeLeft, onTimeUp]);
 
   useEffect(() => {
-    if (timeLeft === 10) {
-      const audio = new Audio('public/timer.mp3'); // Adjust the path if necessary
-      audio.play().catch((error) => {
+    if (timeLeft === 10 && audioEnabled && audioRef.current) {
+      audioRef.current.play().catch((error) => {
         console.error('Audio playback failed:', error);
       });
     }
-  }, [timeLeft]);
+  }, [timeLeft, audioEnabled]);
+
+  // Enable audio playback on first user interaction
+  useEffect(() => {
+    const enableAudio = () => {
+      setAudioEnabled(true);
+      window.removeEventListener('click', enableAudio);
+      window.removeEventListener('keydown', enableAudio);
+    };
+    window.addEventListener('click', enableAudio);
+    window.addEventListener('keydown', enableAudio);
+    return () => {
+      window.removeEventListener('click', enableAudio);
+      window.removeEventListener('keydown', enableAudio);
+    };
+  }, []);
 
   const handleOptionClick = (option: string) => {
     if (selectedAnswers.length >= blanksCount) return;
@@ -91,6 +107,9 @@ const Question: React.FC<QuestionProps> = ({
 
   return (
     <div className="w-full">
+      {/* Audio element for timer alert */}
+      <audio ref={audioRef} src="/timer.mp3" preload="auto" />
+
       {/* Sentence */}
       <div className="mb-6 text-lg font-medium text-slate-700 leading-8 flex flex-wrap gap-3 items-center justify-center break-words">
         {parts.map((part, index) => (

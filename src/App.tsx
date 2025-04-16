@@ -73,7 +73,6 @@ const App: React.FC = () => {
   {/* Logo + Heading Flex Container */}
   <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
     {/* Logo */}
-    <img src="public/header.svg" alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10" />
 
     {/* Main Heading */}
     <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-purple-600 to-yellow-400 drop-shadow-md">
